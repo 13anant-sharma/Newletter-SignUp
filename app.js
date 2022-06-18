@@ -26,11 +26,9 @@ app.get("/", async (req, res, next) => {
 });
 
 app.post("/", async (req, res, next) => {
-  const {
-    fName,
-    lName,
-    email
-  } = req.body.user;
+  const fName = req.body.user.Fname;
+  const lName = req.body.user.Lname;
+  const email = req.body.user.email;
   try {
     const response = await mailchimp.lists.addListMember("fd05d703bd", {
       email_address: email,
