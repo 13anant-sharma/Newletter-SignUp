@@ -38,7 +38,7 @@ app.post("/", async (req, res, next) => {
         LNAME: lName,
       },
     });
-    console.log(response);
+    console.log(response.statusCode);
     // console.log(response.status);
     if (res.statusCode===200) {
       res.sendFile(__dirname + "/success.html");
